@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviation Opportunities Portal | Q3 Consultancy</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; background: #0a1628; }
+
+    /* Loading screen */
+    #loader {
+      position: fixed; inset: 0;
+      background: #0a1628;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 999; transition: opacity 0.5s ease;
+    }
+    #loader.hide { opacity: 0; pointer-events: none; }
+    #loader svg { width: 56px; height: 56px; margin-bottom: 20px; animation: spin 1.2s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #loader p { color: #cbd5e1; font-family: sans-serif; font-size: 15px; letter-spacing: .5px; }
+    #loader strong { color: #fff; }
+
+    /* Full-screen iframe — no topbar offset */
+    #portal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading spinner (hides once iframe loads) -->
+  <div id="loader">
+    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="25" cy="25" r="20" stroke="#1e3a5f" stroke-width="4"/>
+      <path d="M25 5 A20 20 0 0 1 45 25" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <p><strong>Q3 Consultancy</strong> — Loading Aviation Portal…</p>
+  </div>
+
+  <!-- Full-screen standalone iframe -->
+  <iframe
+    id="portal"
+    src="https://q3consultancy.github.io/Aviation-Opportunities-Portal/"
+    title="Q3 Aviation Opportunities Portal"
+    allowfullscreen
+    allow="fullscreen"
+    loading="eager"
+  ></iframe>
+
+  <script>
+    const iframe = document.getElementById('portal');
+    const loader = document.getElementById('loader');
+
+    // Hide loader once iframe content loads
+    iframe.addEventListener('load', function() {
+      setTimeout(function() { loader.classList.add('hide'); }, 300);
+    });
+
+    // Fallback: hide loader after 8 seconds regardless
+    setTimeout(function() { loader.classList.add('hide'); }, 8000);
+  </script>
+
+</body>
+</html>
