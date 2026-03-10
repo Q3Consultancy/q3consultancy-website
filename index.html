@@ -876,8 +876,24 @@
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     const target = document.getElementById('page-' + id);
     if (target) { target.classList.add('active'); window.scrollTo({top: 0, behavior: 'smooth'}); }
+    // Update browser URL without a full page reload
+    const urlPath = (id === 'home') ? '/' : '/' + id;
+    if (window.location.pathname !== urlPath) {
+      history.pushState({ page: id }, '', urlPath);
+    }
     setTimeout(initObserver, 100);
   }
+
+  // BACK / FORWARD button support
+  window.addEventListener('popstate', function(e) {
+    const id = (e.state && e.state.page) ? e.state.page : 'home';
+    const target = document.getElementById('page-' + id);
+    if (target) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      target.classList.add('active');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  });
 
   // MOBILE MENU
   function toggleMenu() {
@@ -892,7 +908,31 @@
     }, { threshold: 0.1 });
     els.forEach(el => obs.observe(el));
   }
-  document.addEventListener('DOMContentLoaded', initObserver);
+  // URL-BASED ROUTING — activates correct page when URL is loaded directly
+  document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname.replace(/\/+$/, '') || '/';
+    const pageMap = {
+      '/':                'home',
+      '/home':            'home',
+      '/about':           'about',
+      '/about-us':        'about',
+      '/services':        'services',
+      '/our-services':    'services',
+      '/testimonials':    'testimonials',
+      '/contact':         'contact',
+      '/contact-us':      'contact',
+      '/aviationportal':  'aviationportal'
+    };
+    const pageId = pageMap[path] || 'home';
+    const target = document.getElementById('page-' + pageId);
+    if (target) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      target.classList.add('active');
+    }
+    // Replace history entry so back-button works cleanly
+    history.replaceState({ page: pageId }, '', path === '/' ? '/' : path);
+    initObserver();
+  });
 
   // FAQ ACCORDION
   function toggleFaq(i) {
