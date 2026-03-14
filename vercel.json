@@ -2,11 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/about",          "destination": "/index.html" },
-    { "source": "/services",       "destination": "/index.html" },
-    { "source": "/testimonials",   "destination": "/index.html" },
-    { "source": "/contact",        "destination": "/index.html" },
-    { "source": "/aviationportal", "destination": "/aviationportal/index.html" }
+    { "source": "/aviationportal", "destination": "/aviationportal/index.html" },
+    { "source": "/(.*)",           "destination": "/index.html" }
   ],
   "headers": [
     {
