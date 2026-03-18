@@ -120,7 +120,7 @@
 
 
   /* ── Team Member Modals ─────────────────────────────────────── */
-  .team-modal { animation: modalFadeIn 0.2s ease; }
+  .team-modal { display: none; animation: modalFadeIn 0.2s ease; }
   .team-modal.is-open { display: flex !important; }
   .team-modal-panel { animation: modalSlideUp 0.25s ease; }
 
@@ -686,8 +686,8 @@
 <!--  SERVICES PAGE                                                -->
 <!-- ============================================================ -->
 <div id="page-services" class="page">
-  <section class="relative h-64 sm:h-80 flex items-center justify-center overflow-hidden">
-    <img src="https://sspark.genspark.ai/cfimages?u1=PpMW3%2FlNCbGAIPwhrCJmzlqoXzErXZmJ3YXjFtCLXKk0VMw4oq%2BZbDJ%2B1H85SMK4OfAGLlntt8m0hn%2BGkJlT%2B4VOyDKRnoZ3dj6t8R9CDMs59mz3p6nsVr6lg4jXnoibeDP2Rskif%2FCESbijSl5%2Fnylf55vbDxM%3D&u2=hvaTDo5MHpHnXXDY&width=2560" alt="Services" class="absolute inset-0 w-full h-full object-cover" style="object-position: center 15%;" />
+  <section class="relative h-64 sm:h-72 md:h-96 lg:h-[28rem] flex items-center justify-center overflow-hidden">
+    <img src="https://sspark.genspark.ai/cfimages?u1=PpMW3%2FlNCbGAIPwhrCJmzlqoXzErXZmJ3YXjFtCLXKk0VMw4oq%2BZbDJ%2B1H85SMK4OfAGLlntt8m0hn%2BGkJlT%2B4VOyDKRnoZ3dj6t8R9CDMs59mz3p6nsVr6lg4jXnoibeDP2Rskif%2FCESbijSl5%2Fnylf55vbDxM%3D&u2=hvaTDo5MHpHnXXDY&width=2560" alt="Services" class="absolute inset-0 w-full h-full object-cover" style="object-position: center top;" />
     <div class="absolute inset-0 bg-primary/70"></div>
     <div class="relative z-10 text-center">
       <h1 class="font-serif text-4xl sm:text-5xl font-bold text-white">Our Services</h1>
@@ -775,7 +775,7 @@
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="order-2 md:order-1 fade-up">
-          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=85" alt="Team handshake recruitment" class="rounded-2xl w-full object-cover h-96 shadow-lg" />
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=85" alt="Professional interview panel" class="rounded-2xl w-full object-cover h-96 shadow-lg" style="filter: blur(1.5px) brightness(0.92);" />
         </div>
         <div class="order-1 md:order-2 fade-up">
           <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
@@ -1613,7 +1613,7 @@
 
 <!-- ═══ TEAM MEMBER MODALS ═══ -->
   <!-- Modal: Quincy Quayson -->
-  <div id="modal-quincy" class="team-modal fixed inset-0 z-[999] flex items-center justify-center p-4" style="display:none!important;">
+  <div id="modal-quincy" class="team-modal fixed inset-0 z-[999] items-center justify-center p-4">
     <div class="team-modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTeamModal('modal-quincy')"></div>
     <div class="team-modal-panel relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 z-10">
       <!-- Close button -->
@@ -1647,7 +1647,7 @@
     </div>
   </div>
   <!-- Modal: Thierno Ba -->
-  <div id="modal-thierno" class="team-modal fixed inset-0 z-[999] flex items-center justify-center p-4" style="display:none!important;">
+  <div id="modal-thierno" class="team-modal fixed inset-0 z-[999] items-center justify-center p-4">
     <div class="team-modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTeamModal('modal-thierno')"></div>
     <div class="team-modal-panel relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 z-10">
       <!-- Close button -->
@@ -1681,7 +1681,7 @@
     </div>
   </div>
   <!-- Modal: John Lucy -->
-  <div id="modal-john" class="team-modal fixed inset-0 z-[999] flex items-center justify-center p-4" style="display:none!important;">
+  <div id="modal-john" class="team-modal fixed inset-0 z-[999] items-center justify-center p-4">
     <div class="team-modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTeamModal('modal-john')"></div>
     <div class="team-modal-panel relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 z-10">
       <!-- Close button -->
@@ -1715,7 +1715,7 @@
     </div>
   </div>
   <!-- Modal: Vernu Navarathnam -->
-  <div id="modal-vernu" class="team-modal fixed inset-0 z-[999] flex items-center justify-center p-4" style="display:none!important;">
+  <div id="modal-vernu" class="team-modal fixed inset-0 z-[999] items-center justify-center p-4">
     <div class="team-modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTeamModal('modal-vernu')"></div>
     <div class="team-modal-panel relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 z-10">
       <!-- Close button -->
@@ -1749,7 +1749,7 @@
     </div>
   </div>
   <!-- Modal: Mohamed Elessawy -->
-  <div id="modal-mohammed" class="team-modal fixed inset-0 z-[999] flex items-center justify-center p-4" style="display:none!important;">
+  <div id="modal-mohammed" class="team-modal fixed inset-0 z-[999] items-center justify-center p-4">
     <div class="team-modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTeamModal('modal-mohammed')"></div>
     <div class="team-modal-panel relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 z-10">
       <!-- Close button -->
@@ -1783,7 +1783,7 @@
     </div>
   </div>
   <!-- Modal: Louise Di Blasi -->
-  <div id="modal-louise" class="team-modal fixed inset-0 z-[999] flex items-center justify-center p-4" style="display:none!important;">
+  <div id="modal-louise" class="team-modal fixed inset-0 z-[999] items-center justify-center p-4">
     <div class="team-modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTeamModal('modal-louise')"></div>
     <div class="team-modal-panel relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 z-10">
       <!-- Close button -->
@@ -1817,7 +1817,7 @@
     </div>
   </div>
   <!-- Modal: Debmalya &#8216;Jojo&#8217; Das -->
-  <div id="modal-jojo" class="team-modal fixed inset-0 z-[999] flex items-center justify-center p-4" style="display:none!important;">
+  <div id="modal-jojo" class="team-modal fixed inset-0 z-[999] items-center justify-center p-4">
     <div class="team-modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTeamModal('modal-jojo')"></div>
     <div class="team-modal-panel relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 z-10">
       <!-- Close button -->
@@ -1851,7 +1851,7 @@
     </div>
   </div>
   <!-- Modal: Paul Loo -->
-  <div id="modal-paul" class="team-modal fixed inset-0 z-[999] flex items-center justify-center p-4" style="display:none!important;">
+  <div id="modal-paul" class="team-modal fixed inset-0 z-[999] items-center justify-center p-4">
     <div class="team-modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTeamModal('modal-paul')"></div>
     <div class="team-modal-panel relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 z-10">
       <!-- Close button -->
@@ -1885,7 +1885,7 @@
     </div>
   </div>
   <!-- Modal: Mazisi Parkes -->
-  <div id="modal-mazisi" class="team-modal fixed inset-0 z-[999] flex items-center justify-center p-4" style="display:none!important;">
+  <div id="modal-mazisi" class="team-modal fixed inset-0 z-[999] items-center justify-center p-4">
     <div class="team-modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTeamModal('modal-mazisi')"></div>
     <div class="team-modal-panel relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 z-10">
       <!-- Close button -->
