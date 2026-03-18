@@ -68,51 +68,54 @@
   /* ── Our Values card animations ─────────────────────────────── */
   .value-card { position: relative; }
 
-  /* Hover lift + border (same as before) */
+  /* Hover lift */
   .value-card:hover {
     box-shadow: 0 20px 40px -8px rgba(0,0,0,0.12);
     transform: translateY(-4px);
     border-color: rgba(var(--color-accent), 0.2);
   }
 
-  /* Desktop hover: fire the ring + glow */
-  @media (hover: hover) {
-    .value-card:hover .value-ring-circle       { stroke-dashoffset: 0 !important; }
-    .value-card:hover .results-arrow           { stroke-dashoffset: 0 !important; }
+  /* ── Ring draw transition (both in AND out) ───────────────── */
+  /* The SVG attribute stroke-dashoffset="157" is the resting state.
+     When :hover or .is-active applies stroke-dashoffset:0 the ring draws.
+     When removed it transitions back to 157 (hidden). No !important so
+     the SVG attribute can reassert when neither rule is active. */
 
-    /* Integrity green glow */
+  /* Desktop hover – ring draws in, glow appears */
+  @media (hover: hover) {
+    .value-card:hover .value-ring-circle { stroke-dashoffset: 0; }
+    .value-card:hover .results-arrow     { stroke-dashoffset: 0; }
+
     .value-card[data-value="integrity"]:hover .value-icon-bg {
-      box-shadow: 0 0 0 6px rgba(34,197,94,0.18), 0 0 18px 4px rgba(34,197,94,0.25);
+      box-shadow: 0 0 0 6px rgba(34,197,94,0.18), 0 0 20px 6px rgba(34,197,94,0.28);
     }
-    /* Expertise yellow glow */
     .value-card[data-value="expertise"]:hover .value-icon-bg {
-      box-shadow: 0 0 0 6px rgba(234,179,8,0.18), 0 0 18px 4px rgba(234,179,8,0.25);
+      box-shadow: 0 0 0 6px rgba(234,179,8,0.18), 0 0 20px 6px rgba(234,179,8,0.28);
     }
-    /* Relationships blue glow */
     .value-card[data-value="relationships"]:hover .value-icon-bg {
-      box-shadow: 0 0 0 6px rgba(59,130,246,0.18), 0 0 18px 4px rgba(59,130,246,0.25);
+      box-shadow: 0 0 0 6px rgba(59,130,246,0.18), 0 0 20px 6px rgba(59,130,246,0.28);
     }
-    /* Results purple glow */
     .value-card[data-value="results"]:hover .value-icon-bg {
-      box-shadow: 0 0 0 6px rgba(168,85,247,0.18), 0 0 18px 4px rgba(168,85,247,0.25);
+      box-shadow: 0 0 0 6px rgba(168,85,247,0.18), 0 0 20px 6px rgba(168,85,247,0.28);
     }
   }
 
-  /* Active state (when scroll-triggered on mobile) */
-  .value-card.is-active .value-ring-circle { stroke-dashoffset: 0 !important; }
-  .value-card.is-active .results-arrow     { stroke-dashoffset: 0 !important; }
+  /* Mobile scroll – .is-active added while card is in viewport,
+     removed when card scrolls away → glow fades out */
+  .value-card.is-active .value-ring-circle { stroke-dashoffset: 0; }
+  .value-card.is-active .results-arrow     { stroke-dashoffset: 0; }
 
   .value-card[data-value="integrity"].is-active .value-icon-bg {
-    box-shadow: 0 0 0 6px rgba(34,197,94,0.18), 0 0 18px 4px rgba(34,197,94,0.25);
+    box-shadow: 0 0 0 6px rgba(34,197,94,0.18), 0 0 20px 6px rgba(34,197,94,0.28);
   }
   .value-card[data-value="expertise"].is-active .value-icon-bg {
-    box-shadow: 0 0 0 6px rgba(234,179,8,0.18), 0 0 18px 4px rgba(234,179,8,0.25);
+    box-shadow: 0 0 0 6px rgba(234,179,8,0.18), 0 0 20px 6px rgba(234,179,8,0.28);
   }
   .value-card[data-value="relationships"].is-active .value-icon-bg {
-    box-shadow: 0 0 0 6px rgba(59,130,246,0.18), 0 0 18px 4px rgba(59,130,246,0.25);
+    box-shadow: 0 0 0 6px rgba(59,130,246,0.18), 0 0 20px 6px rgba(59,130,246,0.28);
   }
   .value-card[data-value="results"].is-active .value-icon-bg {
-    box-shadow: 0 0 0 6px rgba(168,85,247,0.18), 0 0 18px 4px rgba(168,85,247,0.25);
+    box-shadow: 0 0 0 6px rgba(168,85,247,0.18), 0 0 20px 6px rgba(168,85,247,0.28);
   }
 
 </style>
@@ -1588,25 +1591,24 @@
 
   <script>
 
-  /* ── Our Values IntersectionObserver (mobile scroll trigger) ─── */
+  /* ── Our Values IntersectionObserver (mobile – toggles on scroll) ── */
   (function() {
     var cards = document.querySelectorAll('.value-card');
     if (!cards.length) return;
 
-    // Stagger delays so each card fires slightly after the previous
-    var delays = { integrity: 0, expertise: 150, relationships: 300, results: 450 };
-
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          var card = entry.target;
-          var key  = card.getAttribute('data-value');
-          var delay = delays[key] || 0;
-          setTimeout(function() { card.classList.add('is-active'); }, delay);
-          observer.unobserve(card); // fire once
+          // Card scrolled into view → add glow
+          entry.target.classList.add('is-active');
+        } else {
+          // Card scrolled out of view → remove glow so it resets
+          entry.target.classList.remove('is-active');
         }
       });
-    }, { threshold: 0.35 });
+    }, {
+      threshold: 0.45   // fire when card is ~half visible
+    });
 
     cards.forEach(function(c) { observer.observe(c); });
   })();
