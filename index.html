@@ -1974,9 +1974,13 @@
         el.classList.remove('force-hover');
         openSectorOverlay(el.dataset.sid);
       } else {
-        /* Single tap → toggle label only */
+        /* Single tap → select this box, deselect all others */
         _lastTap = now;
-        el.classList.toggle('force-hover');
+        var already = el.classList.contains('force-hover');
+        /* Remove force-hover from every sector box */
+        document.querySelectorAll('.sector-box').forEach(function(b){ b.classList.remove('force-hover'); });
+        /* If it wasn't already selected, select it; if it was, leave deselected */
+        if (!already) { el.classList.add('force-hover'); }
       }
     }
     /* Reset _touchHandled after a short delay (so onclick stays blocked) */
@@ -2000,6 +2004,8 @@
   function openSectorOverlay(sid) {
     var data = sectorData[sid];
     if (!data) return;
+    /* Deselect all sector boxes when overlay opens */
+    document.querySelectorAll('.sector-box').forEach(function(b){ b.classList.remove('force-hover'); });
     var overlay = document.getElementById('sector-overlay');
     var title   = document.getElementById('sector-overlay-title');
     var list    = document.getElementById('sector-overlay-list');
