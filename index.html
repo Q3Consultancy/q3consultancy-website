@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="public, max-age=3600, stale-while-revalidate=86400" />
+
+  <!-- Resource hints for faster CDN resolution -->
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Q3 Consultancy | Dubai Business Development Advisory</title>
   <meta name="description" content="Q3 Consultancy LLC — Your growth partner in the Middle East &amp; Africa. Expert Business Development, Executive Recruitment, and Real Estate services in Dubai." />
@@ -10,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -136,8 +145,8 @@
     /* ── Tapped state (JS adds .force-hover): label visible, icon hidden ─── */
     .sector-box.force-hover .sector-icon  { opacity: 0 !important; }
     .sector-box.force-hover .sector-label { opacity: 1 !important; }
-    .sector-box.force-hover              { background-color: rgba(var(--color-accent,59 130 246)/.08) !important;
-                                           border-color: rgba(var(--color-accent,59 130 246)/.3) !important; }
+    .sector-box.force-hover              { background-color: rgba(37,99,235,0.08) !important;
+                                           border-color: rgba(37,99,235,0.30) !important; }
   }
 
   .team-modal { display: none; animation: modalFadeIn 0.2s ease; }
@@ -154,6 +163,16 @@
   }
 
 </style>
+  <script>
+    /* Global error handler – prevents uncaught errors from silently breaking the page */
+    window.onerror = function(msg, src, line, col, err) {
+      /* Silently catch without crashing; log for debugging only */
+      return true; /* prevents browser default error dialog */
+    };
+    window.addEventListener('unhandledrejection', function(e) {
+      e.preventDefault();
+    });
+  </script>
 </head>
 <body class="bg-white text-primary">
 
@@ -455,7 +474,7 @@
         <!-- Quincy Quayson -->
         <div class="team-card bg-light rounded-2xl p-7 shadow-sm fade-up cursor-pointer hover:shadow-lg transition-shadow duration-200" onclick="openTeamModal('modal-quincy')">
           <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/9a9fba89733d01964e846611990900edc89e2481/Quincy%20-%20Corporate.jpg"
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/9a9fba89733d01964e846611990900edc89e2481/Quincy%20-%20Corporate.jpg"
                  alt="Quincy Quayson" class="w-16 h-16 rounded-full object-cover object-top shadow-sm"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
             <div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden">
@@ -486,7 +505,7 @@
         <!-- Thierno Ba -->
         <div class="team-card bg-light rounded-2xl p-7 shadow-sm fade-up cursor-pointer hover:shadow-lg transition-shadow duration-200" onclick="openTeamModal('modal-thierno')">
           <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Thierno%20Ba%20Profile.png" alt="Thierno Ba" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">TB</span></div>
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Thierno%20Ba%20Profile.png" alt="Thierno Ba" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">TB</span></div>
             <div>
               <h3 class="font-serif text-lg font-bold mb-0.5">Thierno Ba</h3>
               <p class="text-accent text-xs font-semibold uppercase tracking-wide">Managing Partner</p>
@@ -511,7 +530,7 @@
         <!-- John Lucy -->
         <div class="team-card bg-light rounded-2xl p-7 shadow-sm fade-up cursor-pointer hover:shadow-lg transition-shadow duration-200" onclick="openTeamModal('modal-john')">
           <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/John%20Lucy%20Profile.png" alt="John Lucy" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">JL</span></div>
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/John%20Lucy%20Profile.png" alt="John Lucy" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">JL</span></div>
             <div>
               <h3 class="font-serif text-lg font-bold mb-0.5">John Lucy</h3>
               <p class="text-accent text-xs font-semibold uppercase tracking-wide">Business Partner</p>
@@ -536,7 +555,7 @@
         <!-- Vernu Navarathnam -->
         <div class="team-card bg-light rounded-2xl p-7 shadow-sm fade-up cursor-pointer hover:shadow-lg transition-shadow duration-200" onclick="openTeamModal('modal-vernu')">
           <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Vernu%20Navarathnam%20Profile.png" alt="Vernu Navarathnam" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">VN</span></div>
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Vernu%20Navarathnam%20Profile.png" alt="Vernu Navarathnam" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">VN</span></div>
             <div>
               <h3 class="font-serif text-lg font-bold mb-0.5">Vernu Navarathnam</h3>
               <p class="text-accent text-xs font-semibold uppercase tracking-wide">Business Partner</p>
@@ -561,7 +580,7 @@
         <!-- Mohamed Elessawy -->
         <div class="team-card bg-light rounded-2xl p-7 shadow-sm fade-up cursor-pointer hover:shadow-lg transition-shadow duration-200" onclick="openTeamModal('modal-mohammed')">
           <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Mohamed%20Elessawy%20Profile.png" alt="Mohamed Elessawy" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">ME</span></div>
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Mohamed%20Elessawy%20Profile.png" alt="Mohamed Elessawy" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">ME</span></div>
             <div>
               <h3 class="font-serif text-lg font-bold mb-0.5">Mohamed Elessawy</h3>
               <p class="text-accent text-xs font-semibold uppercase tracking-wide">Business Partner</p>
@@ -586,7 +605,7 @@
         <!-- Louise Di Blasi -->
         <div class="team-card bg-light rounded-2xl p-7 shadow-sm fade-up cursor-pointer hover:shadow-lg transition-shadow duration-200" onclick="openTeamModal('modal-louise')">
           <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Louise%20Di%20Blasi%20Profile%20.png" alt="Louise Di Blasi" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">LD</span></div>
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Louise%20Di%20Blasi%20Profile%20.png" alt="Louise Di Blasi" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">LD</span></div>
             <div>
               <h3 class="font-serif text-lg font-bold mb-0.5">Louise Di Blasi</h3>
               <p class="text-accent text-xs font-semibold uppercase tracking-wide">Senior Advisor</p>
@@ -611,7 +630,7 @@
         <!-- Debmalya Das -->
         <div class="team-card bg-light rounded-2xl p-7 shadow-sm fade-up cursor-pointer hover:shadow-lg transition-shadow duration-200" onclick="openTeamModal('modal-jojo')">
           <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Debmalya%20%E2%80%98Jojo%E2%80%99%20Das%20Profile%20.png" alt="Debmalya Jojo Das" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">DD</span></div>
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Debmalya%20%E2%80%98Jojo%E2%80%99%20Das%20Profile%20.png" alt="Debmalya Jojo Das" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">DD</span></div>
             <div>
               <h3 class="font-serif text-lg font-bold mb-0.5">Debmalya &#8216;Jojo&#8217; Das</h3>
               <p class="text-accent text-xs font-semibold uppercase tracking-wide">Senior Advisor</p>
@@ -636,7 +655,7 @@
         <!-- Paul Loo -->
         <div class="team-card bg-light rounded-2xl p-7 shadow-sm fade-up cursor-pointer hover:shadow-lg transition-shadow duration-200" onclick="openTeamModal('modal-paul')">
           <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/6d788c6a55401dba9b0555343d1dffa27a798a2a/Team%20Profiles/Paul%20Loo%20Profile.png" alt="Paul Loo" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">PL</span></div>
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/6d788c6a55401dba9b0555343d1dffa27a798a2a/Team%20Profiles/Paul%20Loo%20Profile.png" alt="Paul Loo" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">PL</span></div>
             <div>
               <h3 class="font-serif text-lg font-bold mb-0.5">Paul Loo</h3>
               <p class="text-accent text-xs font-semibold uppercase tracking-wide">Senior Advisor</p>
@@ -661,7 +680,7 @@
         <!-- Mazisi Parkes -->
         <div class="team-card bg-light rounded-2xl p-7 shadow-sm fade-up cursor-pointer hover:shadow-lg transition-shadow duration-200" onclick="openTeamModal('modal-mazisi')">
           <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/8d70586a0a1e04a8f6d09ef290ffc5ec0b15daf5/Team%20Profiles/Mazisi%20Parkes%20Profile.png" alt="Mazisi Parkes" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">MP</span></div>
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/8d70586a0a1e04a8f6d09ef290ffc5ec0b15daf5/Team%20Profiles/Mazisi%20Parkes%20Profile.png" alt="Mazisi Parkes" class="w-16 h-16 rounded-full object-cover object-top shadow-sm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="w-16 h-16 bg-accent/10 rounded-full items-center justify-center mb-0 hidden"><span class="text-accent font-serif font-bold text-xl">MP</span></div>
             <div>
               <h3 class="font-serif text-lg font-bold mb-0.5">Mazisi Parkes</h3>
               <p class="text-accent text-xs font-semibold uppercase tracking-wide">Senior Advisor</p>
@@ -1567,9 +1586,20 @@
     document.getElementById('btnText').textContent = 'Sending…';
     document.getElementById('btnSpinner').classList.remove('hidden');
     btn.disabled = true;
-    setTimeout(() => {
+    /* Collect form data for mailto fallback */
+    var fname   = (document.getElementById('fname')   || {value:''}).value;
+    var company = (document.getElementById('company') || {value:''}).value;
+    var email   = (document.getElementById('email')   || {value:''}).value;
+    var service = (document.getElementById('service') || {value:''}).value;
+    var message = (document.getElementById('message') || {value:''}).value;
+    var body    = encodeURIComponent('Name: ' + fname + '\nCompany: ' + company + '\nEmail: ' + email + '\nService: ' + service + '\n\n' + message);
+    setTimeout(function() {
       document.getElementById('contactForm').classList.add('hidden');
       document.getElementById('successMsg').classList.remove('hidden');
+      /* Open mailto as silent fallback to capture enquiry */
+      try {
+        window.open('mailto:info@q3consultancy.com?subject=Website%20Enquiry%20-%20' + encodeURIComponent(service) + '&body=' + body, '_blank');
+      } catch(e) { /* ignore if popup blocked */ }
     }, 1500);
   }
 </script>
@@ -1582,6 +1612,7 @@
     src="https://q3consultancy.github.io/Aviation-Opportunities-Portal/"
     style="width:100%;height:100vh;border:none;display:block;"
     title="Q3 Aviation Opportunities Portal"
+    loading="lazy"
     allowfullscreen
   ></iframe>
 </div>
@@ -1642,7 +1673,7 @@
       </button>
       <!-- Header -->
       <div class="flex items-center gap-5 mb-6">
-        <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/9a9fba89733d01964e846611990900edc89e2481/Quincy%20-%20Corporate.jpg" alt="Quincy Quayson"
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/9a9fba89733d01964e846611990900edc89e2481/Quincy%20-%20Corporate.jpg" alt="Quincy Quayson"
                  class="w-28 h-28 rounded-full object-cover object-top shadow-xl flex-shrink-0"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="w-28 h-28 bg-accent/10 rounded-full items-center justify-center hidden flex-shrink-0">
@@ -1676,7 +1707,7 @@
       </button>
       <!-- Header -->
       <div class="flex items-center gap-5 mb-6">
-        <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Thierno%20Ba%20Profile.png" alt="Thierno Ba"
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Thierno%20Ba%20Profile.png" alt="Thierno Ba"
                  class="w-28 h-28 rounded-full object-cover object-top shadow-xl flex-shrink-0"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="w-28 h-28 bg-accent/10 rounded-full items-center justify-center hidden flex-shrink-0">
@@ -1710,7 +1741,7 @@
       </button>
       <!-- Header -->
       <div class="flex items-center gap-5 mb-6">
-        <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/John%20Lucy%20Profile.png" alt="John Lucy"
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/John%20Lucy%20Profile.png" alt="John Lucy"
                  class="w-28 h-28 rounded-full object-cover object-top shadow-xl flex-shrink-0"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="w-28 h-28 bg-accent/10 rounded-full items-center justify-center hidden flex-shrink-0">
@@ -1744,7 +1775,7 @@
       </button>
       <!-- Header -->
       <div class="flex items-center gap-5 mb-6">
-        <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Vernu%20Navarathnam%20Profile.png" alt="Vernu Navarathnam"
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Vernu%20Navarathnam%20Profile.png" alt="Vernu Navarathnam"
                  class="w-28 h-28 rounded-full object-cover object-top shadow-xl flex-shrink-0"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="w-28 h-28 bg-accent/10 rounded-full items-center justify-center hidden flex-shrink-0">
@@ -1778,7 +1809,7 @@
       </button>
       <!-- Header -->
       <div class="flex items-center gap-5 mb-6">
-        <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Mohamed%20Elessawy%20Profile.png" alt="Mohamed Elessawy"
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Mohamed%20Elessawy%20Profile.png" alt="Mohamed Elessawy"
                  class="w-28 h-28 rounded-full object-cover object-top shadow-xl flex-shrink-0"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="w-28 h-28 bg-accent/10 rounded-full items-center justify-center hidden flex-shrink-0">
@@ -1812,7 +1843,7 @@
       </button>
       <!-- Header -->
       <div class="flex items-center gap-5 mb-6">
-        <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Louise%20Di%20Blasi%20Profile%20.png" alt="Louise Di Blasi"
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Louise%20Di%20Blasi%20Profile%20.png" alt="Louise Di Blasi"
                  class="w-28 h-28 rounded-full object-cover object-top shadow-xl flex-shrink-0"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="w-28 h-28 bg-accent/10 rounded-full items-center justify-center hidden flex-shrink-0">
@@ -1846,7 +1877,7 @@
       </button>
       <!-- Header -->
       <div class="flex items-center gap-5 mb-6">
-        <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Debmalya%20%E2%80%98Jojo%E2%80%99%20Das%20Profile%20.png" alt="Debmalya &#8216;Jojo&#8217; Das"
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/30e749c2d3e3b6d1d41e528c728c9b22130b6f2d/Team%20Profiles/Debmalya%20%E2%80%98Jojo%E2%80%99%20Das%20Profile%20.png" alt="Debmalya &#8216;Jojo&#8217; Das"
                  class="w-28 h-28 rounded-full object-cover object-top shadow-xl flex-shrink-0"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="w-28 h-28 bg-accent/10 rounded-full items-center justify-center hidden flex-shrink-0">
@@ -1880,7 +1911,7 @@
       </button>
       <!-- Header -->
       <div class="flex items-center gap-5 mb-6">
-        <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/6d788c6a55401dba9b0555343d1dffa27a798a2a/Team%20Profiles/Paul%20Loo%20Profile.png" alt="Paul Loo"
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/6d788c6a55401dba9b0555343d1dffa27a798a2a/Team%20Profiles/Paul%20Loo%20Profile.png" alt="Paul Loo"
                  class="w-28 h-28 rounded-full object-cover object-top shadow-xl flex-shrink-0"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="w-28 h-28 bg-accent/10 rounded-full items-center justify-center hidden flex-shrink-0">
@@ -1914,7 +1945,7 @@
       </button>
       <!-- Header -->
       <div class="flex items-center gap-5 mb-6">
-        <img src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/8d70586a0a1e04a8f6d09ef290ffc5ec0b15daf5/Team%20Profiles/Mazisi%20Parkes%20Profile.png" alt="Mazisi Parkes"
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/Q3Consultancy/q3consultancy-website/8d70586a0a1e04a8f6d09ef290ffc5ec0b15daf5/Team%20Profiles/Mazisi%20Parkes%20Profile.png" alt="Mazisi Parkes"
                  class="w-28 h-28 rounded-full object-cover object-top shadow-xl flex-shrink-0"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="w-28 h-28 bg-accent/10 rounded-full items-center justify-center hidden flex-shrink-0">
@@ -1953,7 +1984,9 @@
   var _touchHandled  = false;   /* tells onclick to stand down on mobile */
 
   function sectorTouchStart(el, e) {
+    e.stopPropagation();
     _touchHandled = true;         /* suppress onclick on this touch cycle */
+    if (_sectorTimer) { clearTimeout(_sectorTimer); _sectorTimer = null; }
     /* Long-press: 500 ms → open overlay */
     _sectorTimer = setTimeout(function () {
       _sectorTimer = null;
@@ -1984,7 +2017,7 @@
       }
     }
     /* Reset _touchHandled after a short delay (so onclick stays blocked) */
-    setTimeout(function () { _touchHandled = false; }, 600);
+    setTimeout(function () { _touchHandled = false; }, 350);
   }
 
   
@@ -2020,10 +2053,7 @@
     var overlay = document.getElementById('sector-overlay');
     if (overlay) overlay.style.display = 'none';
   }
-  /* close sector overlay on Escape */
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeSectorOverlay();
-  });
+
 
     function openTeamModal(id) {
     var el = document.getElementById(id);
@@ -2037,14 +2067,14 @@
     el.classList.remove('is-open');
     document.body.style.overflow = '';
   }
-  // Close on Escape key
+  /* ── Escape key: close sector overlay AND team modals ───────── */
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.team-modal.is-open').forEach(function(m) {
-        m.classList.remove('is-open');
-      });
-      document.body.style.overflow = '';
-    }
+    if (e.key !== 'Escape') return;
+    closeSectorOverlay();
+    document.querySelectorAll('.team-modal.is-open').forEach(function(m) {
+      m.classList.remove('is-open');
+    });
+    document.body.style.overflow = '';
   });
 
   </script>
