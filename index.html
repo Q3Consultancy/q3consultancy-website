@@ -120,6 +120,11 @@
 
 
   /* ── Team Member Modals ─────────────────────────────────────── */
+  
+  /* Mobile sector hover label */
+  .sector-box.force-hover .sector-icon { opacity: 0; }
+  .sector-box.force-hover .sector-label { opacity: 1; }
+
   .team-modal { display: none; animation: modalFadeIn 0.2s ease; }
   .team-modal.is-open { display: flex !important; }
   .team-modal-panel { animation: modalSlideUp 0.25s ease; }
@@ -712,49 +717,49 @@
           <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Our Key Sectors</p>
           <div class="grid grid-cols-3 gap-3 mb-8 relative">
             <!-- Aviation -->
-            <div class="group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('aviation')">
+            <div class="sector-box group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('aviation')" ontouchstart="sectorTouchStart(this,event)" ontouchend="sectorTouchEnd()" ondblclick="openSectorOverlay('aviation')">
               <svg class="w-8 h-8 text-accent group-hover:opacity-0 transition-opacity duration-200" fill="currentColor" viewBox="0 0 24 24"><path d="M21 15.5c.3 0 .5-.2.5-.5s-.2-.5-.5-.5l-5-.8-3.5-5.7H10l1.8 5.7-3.8-.4-1.2-1.8H5.5l.8 2.8-.8 2.8H7l1.2-1.8 3.8-.4L10 22h2.5l3.5-5.7 5-.8z"/></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Aviation</span>
+              <span class="sector-label absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Aviation</span>
             </div>
             <!-- Energy -->
-            <div class="group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('energy')">
+            <div class="sector-box group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('energy')" ontouchstart="sectorTouchStart(this,event)" ontouchend="sectorTouchEnd()" ondblclick="openSectorOverlay('energy')">
               <svg class="w-6 h-6 text-accent group-hover:opacity-0 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Energy</span>
+              <span class="sector-label absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Energy</span>
             </div>
             <!-- Commodities -->
-            <div class="group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('commodities')">
+            <div class="sector-box group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('commodities')" ontouchstart="sectorTouchStart(this,event)" ontouchend="sectorTouchEnd()" ondblclick="openSectorOverlay('commodities')">
               <svg class="w-6 h-6 text-accent group-hover:opacity-0 transition-opacity duration-200" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24"><polygon points="5,13 19,13 21,20 3,20" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><polygon points="5,14 19,14 22,22 2,22" fill="currentColor" fill-opacity="0.85" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><line x1="4" y1="18" x2="20" y2="18" stroke="white" stroke-width="1" stroke-linecap="round" opacity="0.55"/><line x1="9"  y1="15.5" x2="9"  y2="21" stroke="white" stroke-width="0.8" stroke-linecap="round" opacity="0.4"/><line x1="15" y1="15.5" x2="15" y2="21" stroke="white" stroke-width="0.8" stroke-linecap="round" opacity="0.4"/></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Commodities</span>
+              <span class="sector-label absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Commodities</span>
             </div>
             <!-- Government -->
-            <div class="group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('government')">
+            <div class="sector-box group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('government')" ontouchstart="sectorTouchStart(this,event)" ontouchend="sectorTouchEnd()" ondblclick="openSectorOverlay('government')">
               <svg class="w-6 h-6 text-accent group-hover:opacity-0 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Government</span>
+              <span class="sector-label absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Government</span>
             </div>
             <!-- FMCG -->
-            <div class="group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('fmcg')">
+            <div class="sector-box group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('fmcg')" ontouchstart="sectorTouchStart(this,event)" ontouchend="sectorTouchEnd()" ondblclick="openSectorOverlay('fmcg')">
               <svg class="w-6 h-6 text-accent group-hover:opacity-0 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 2 L4 6 H20 L18 16 H7 L5 6"/><line x1="7" y1="16" x2="18" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="20" r="1.8" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="20" r="1.8" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="11" r="0.9" fill="currentColor"/><circle cx="14" cy="10" r="0.9" fill="currentColor"/><circle cx="12.5" cy="13" r="0.9" fill="currentColor"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 2 H5"/></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">FMCG</span>
+              <span class="sector-label absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">FMCG</span>
             </div>
             <!-- Healthcare -->
-            <div class="group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('healthcare')">
+            <div class="sector-box group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('healthcare')" ontouchstart="sectorTouchStart(this,event)" ontouchend="sectorTouchEnd()" ondblclick="openSectorOverlay('healthcare')">
               <svg class="w-6 h-6 text-accent group-hover:opacity-0 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h2l1-2 1 4 1-2h2"/></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Healthcare</span>
+              <span class="sector-label absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Healthcare</span>
             </div>
             <!-- Transportation &amp; Logistics -->
-            <div class="group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('transport')">
+            <div class="sector-box group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('transport')" ontouchstart="sectorTouchStart(this,event)" ontouchend="sectorTouchEnd()" ondblclick="openSectorOverlay('transport')">
               <svg class="w-6 h-6 text-accent group-hover:opacity-0 transition-opacity duration-200" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24"><polygon points="1,14 20,14 23,18 1,18" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><rect x="2"  y="9" width="5" height="5" rx="0.5" fill="currentColor" fill-opacity="0.7" stroke="currentColor" stroke-width="1.5"/><rect x="8"  y="9" width="5" height="5" rx="0.5" fill="currentColor" fill-opacity="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="9" width="5" height="5" rx="0.5" fill="currentColor" fill-opacity="0.3" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="5" width="3" height="4" rx="0.5" fill="currentColor" fill-opacity="0.8" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="4" r="1.2" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/><line x1="1" y1="20" x2="23" y2="20" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Transportation &amp; Logistics</span>
+              <span class="sector-label absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Transportation &amp; Logistics</span>
             </div>
             <!-- Tech &amp; AI -->
-            <div class="group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('tech')">
+            <div class="sector-box group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('tech')" ontouchstart="sectorTouchStart(this,event)" ontouchend="sectorTouchEnd()" ondblclick="openSectorOverlay('tech')">
               <svg class="w-6 h-6 text-accent group-hover:opacity-0 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="8" y="8" width="8" height="8" rx="1" stroke="currentColor" stroke-width="0.9" fill="none"/><line x1="10.67" y1="8" x2="10.67" y2="16" stroke="currentColor" stroke-width="0.6" opacity="0.7"/><line x1="13.33" y1="8" x2="13.33" y2="16" stroke="currentColor" stroke-width="0.6" opacity="0.7"/><line x1="8" y1="10.67" x2="16" y2="10.67" stroke="currentColor" stroke-width="0.6" opacity="0.7"/><line x1="8" y1="13.33" x2="16" y2="13.33" stroke="currentColor" stroke-width="0.6" opacity="0.7"/><line x1="9"  y1="5" x2="9"  y2="2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="12" y1="5" x2="12" y2="2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="15" y1="5" x2="15" y2="2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="9"  y1="19" x2="9"  y2="22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="12" y1="19" x2="12" y2="22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="15" y1="19" x2="15" y2="22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="5" y1="9"  x2="2" y2="9"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="5" y1="12" x2="2" y2="12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="5" y1="15" x2="2" y2="15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="19" y1="9"  x2="22" y2="9"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="19" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="19" y1="15" x2="22" y2="15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Tech &amp; AI</span>
+              <span class="sector-label absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">Tech &amp; AI</span>
             </div>
             <!-- Special Economic Zones -->
-            <div class="group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('sez')">
+            <div class="sector-box group relative flex flex-col items-center justify-center bg-gray-50 hover:bg-accent/8 border border-gray-100 hover:border-accent/30 rounded-xl p-3 cursor-pointer transition-all duration-200 h-16 overflow-hidden" onclick="openSectorOverlay('sez')" ontouchstart="sectorTouchStart(this,event)" ontouchend="sectorTouchEnd()" ondblclick="openSectorOverlay('sez')">
               <svg class="w-6 h-6 text-accent group-hover:opacity-0 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="10" cy="12" r="7.5" stroke="currentColor" stroke-width="1.4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.9" d="M10 4.5 C7 6 7 18 10 19.5 C13 18 13 6 10 4.5Z"/><line x1="2.5" y1="9"  x2="17.5" y2="9"  stroke="currentColor" stroke-width="0.9"/><line x1="2.5" y1="15" x2="17.5" y2="15" stroke="currentColor" stroke-width="0.9"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill="currentColor" fill-opacity="0.2" d="M18 2 C15.8 2 14 3.8 14 6 C14 9 18 13 18 13 C18 13 22 9 22 6 C22 3.8 20.2 2 18 2Z"/><circle cx="18" cy="6" r="1.3" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.5"/><text x="7" y="16" font-size="6" font-weight="bold" fill="currentColor" stroke="none" font-family="Arial,sans-serif">$</text></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">SEZs &amp; Investment</span>
+              <span class="sector-label absolute inset-0 flex items-center justify-center text-accent text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-1 text-center">SEZs &amp; Investment</span>
             </div>
           
   <!-- Sector Overlay -->
@@ -1635,8 +1640,8 @@
       </div>
       <!-- Full bio -->
       <div class="text-gray-600 text-sm leading-relaxed space-y-3">
-        <p class="text-gray-600 text-sm leading-relaxed mb-3">Quincy has built a strong network in the aviation sector as well as a reputation for connecting people and global businesses to high-value opportunities in some of the world&#8217;s fastest-growing markets. He has led commercial campaigns of up to $2 billion in value and worked with governments, Fortune 500 companies, SME&#8217;s, start-ups and consultancy firms.</p>
-            <p class="text-gray-400 text-xs mb-1">Master&#8217;s Degree in Aerospace Engineering with Pilot Studies from The University of Liverpool, UK.</p>
+        <p class="text-gray-600 text-sm leading-relaxed mb-3">Aviation sales and business development leader with 16+ years of global experience. Quincy has built a strong network in the aviation sector and a reputation for connecting people and global businesses to high-value opportunities in the world&#8217;s fastest-growing markets. He has led commercial campaigns of up to USD&#160;$2&#160;billion in value, working with governments, Fortune 500 companies, SMEs, start-ups and consultancy firms.</p>
+            <p class="text-gray-400 text-xs mb-1">MSc Aerospace Engineering with Pilot Studies, University of Liverpool, UK.</p>
             <p class="text-gray-400 text-xs mb-2"><span class="font-semibold">Prior Experience:</span> GE Aviation | Honeywell Aerospace</p>
       </div>
       <a href="https://www.linkedin.com/in/quincyquayson/" target="_blank" rel="noopener"
@@ -1669,8 +1674,8 @@
       </div>
       <!-- Full bio -->
       <div class="text-gray-600 text-sm leading-relaxed space-y-3">
-        <p class="text-gray-600 text-sm leading-relaxed mb-3">Seasoned strategy and business intelligence professional, with over 17 years of diverse international experience in FMCG, Real Estate, Aviation &amp; Oil and Gas across Europe, Middle East and Africa. Fluent in both French and English, successful delivering multiple projects in diverse African Markets.</p>
-            <p class="text-gray-400 text-xs mb-1">Master&#39;s Degree in International Marketing &amp; Management and Bachelor&#39;s Degree in Economics &amp; Business from Ecole Supérieure des Affaires de Lille and Université des Sciences Sociales de Toulouse, France.</p>
+        <p class="text-gray-600 text-sm leading-relaxed mb-3">Seasoned strategy and business intelligence professional with 20 years of diverse international experience in FMCG, Real Estate, Aviation &amp; Oil and Gas across Europe, Middle East and Africa. Fluent in both French and English, successfully delivering multiple projects across diverse African markets.</p>
+            <p class="text-gray-400 text-xs mb-1">MSc International Marketing &amp; Management and BSc Economics &amp; Business — Ecole Supérieure des Affaires de Lille and Université des Sciences Sociales de Toulouse, France.</p>
             <p class="text-gray-400 text-xs mb-2"><span class="font-semibold">Prior Experience:</span> L&#39;Oréal | Colgate-Palmolive | Janus Continental Group</p>
       </div>
       <a href="https://www.linkedin.com/in/thierno-ba-a8b1a576/" target="_blank" rel="noopener"
@@ -1805,9 +1810,9 @@
       </div>
       <!-- Full bio -->
       <div class="text-gray-600 text-sm leading-relaxed space-y-3">
-        <p class="text-gray-600 text-sm leading-relaxed mb-3">Experienced International Business Advisor with a core expertise in Trade and Customs.</p>
-            <p class="text-gray-400 text-xs mb-1">Qualified Tutor Level 3 Award in Education and Training and Customs Declaration Services (CDS) Certified by the Chartered Institute of Export &amp; International Trade.</p>
-            <p class="text-gray-400 text-xs mb-2"><span class="font-semibold">Prior Experience:</span> B&amp;M | Home Bargains | UK Government | Chartered Institute of Export &amp; International Trade</p>
+        <p class="text-gray-600 text-sm leading-relaxed mb-3">Experienced International Business &amp; Trade professional with 17+ years in procurement, scaling retail operations to ~$20M/yr. Core expertise spans export, trade and customs.</p>
+            <p class="text-gray-400 text-xs mb-1">Qualified Tutor (Level 3 Award in Education and Training) and Customs Declaration Services (CDS) Certified by the Chartered Institute of Export &amp; International Trade.</p>
+            <p class="text-gray-400 text-xs mb-2"><span class="font-semibold">Prior Experience:</span> B&amp;M | Home Bargains | UK Government | Chartered Institute of Export &amp; International Trade (CIET)</p>
       </div>
       <a href="https://www.linkedin.com/in/louise-di-blasi-b33a2ba0/" target="_blank" rel="noopener"
                class="inline-flex items-center gap-2 text-accent text-sm font-semibold hover:underline mt-4">
@@ -1873,8 +1878,8 @@
       </div>
       <!-- Full bio -->
       <div class="text-gray-600 text-sm leading-relaxed space-y-3">
-        <p class="text-gray-600 text-sm leading-relaxed mb-3">An experienced Portfolio Executive, with an expertise in Executive Search, recruiting across Asia Pacific region. Start-up experience in both Singapore and China; Set up and managed teams across different industries. Connecting Business to Business, in the area of Investments, Acquisitions, Business Introductions and Business to Talent in the area of Executive Search.</p>
-            <p class="text-gray-400 text-xs mb-1">Paul is a Chartered Accountant of Australia and New Zealand and studied Finance and Accounting at the University of Western Australia.</p>
+        <p class="text-gray-600 text-sm leading-relaxed mb-3">Seasoned Portfolio Executive with 30+ years of Executive Search expertise across the Asia-Pacific region. Start-up experience in both Singapore and China, setting up and managing teams across multiple industries. Specialises in connecting businesses in the areas of investments, acquisitions, business introductions and executive talent.</p>
+            <p class="text-gray-400 text-xs mb-1">Chartered Accountant of Australia and New Zealand; Finance &amp; Accounting degree, University of Western Australia.</p>
             <p class="text-gray-400 text-xs mb-2"><span class="font-semibold">Prior Experience:</span> Arthur Anderson | Profile Search &amp; Selection | Michael Page</p>
       </div>
       <a href="https://www.linkedin.com/in/paulloo/" target="_blank" rel="noopener"
@@ -1923,7 +1928,25 @@
 
   /* ── Team Modal open/close ──────────────────────────────────── */
 
-  /* ── Sector Overlay ──────────────────────────────────────── */
+
+  /* ── Sector mobile long-press / label toggle ─────────────────── */
+  var _sectorPressTimer = null;
+  function sectorTouchStart(el, e) {
+    _sectorPressTimer = setTimeout(function() {
+      // Long press: toggle force-hover to show the label
+      el.classList.toggle('force-hover');
+      _sectorPressTimer = null;
+    }, 500);
+  }
+  function sectorTouchEnd() {
+    if (_sectorPressTimer) {
+      clearTimeout(_sectorPressTimer);
+      _sectorPressTimer = null;
+    }
+  }
+
+  /* ── Sector Overlay
+   ──────────────────────────────────────── */
   var sectorData = {
     aviation: { title: "Aviation", items: ["Client representation EMEA–Asia", "Aircraft acquisition / leasing / ACMI / charter", "Engines & parts sourcing", "AOG support", "Event panel speaking"] },
     energy: { title: "Energy", items: ["Client representation EMEA–Asia", "M&A engagement", "Investor engagement"] },
