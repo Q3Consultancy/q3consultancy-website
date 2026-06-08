@@ -6,136 +6,83 @@
   <title>Aviation Opportunities Portal | Q3 Consultancy</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; overflow: hidden; background: #0a1628; }
-
-    /* Loading screen */
+    html, body { height: 100%; overflow: hidden; background: #0a1628; font-family: Arial, sans-serif; }
     #loader {
-      position: fixed; inset: 0;
-      background: #0a1628;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      z-index: 999; transition: opacity 0.5s ease;
+      position: fixed; inset: 0; background: #0a1628; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; z-index: 999; transition: opacity .35s ease;
     }
     #loader.hide { opacity: 0; pointer-events: none; }
-
-    /* Jet engine spinner — spins around its own centre (50%/50%) */
-    #loader svg {
-      width: 90px; height: 90px;
-      margin-bottom: 20px;
-      animation: spin 1.8s linear infinite;
-      transform-origin: 50% 50%;
-    }
+    #loader svg { width: 90px; height: 90px; margin-bottom: 20px; animation: spin 1.8s linear infinite; transform-origin: 50% 50%; }
     @keyframes spin { to { transform: rotate(360deg); } }
-
-    #loader p { color: #cbd5e1; font-family: sans-serif; font-size: 15px; letter-spacing: .5px; }
+    #loader p { color: #cbd5e1; font-size: 15px; letter-spacing: .4px; text-align:center; }
     #loader strong { color: #fff; }
-
-    /* Full-screen iframe — no topbar offset */
-    #portal {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      width: 100%; height: 100%;
-      border: none;
+    #loader .actions { margin-top: 18px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+    #loader a { color:#fff; text-decoration:none; background:#1d4ed8; padding:10px 14px; border-radius:8px; font-size:14px; }
+    #loader a.secondary { background:#334155; }
+    #portal { position: fixed; inset: 0; width: 100%; height: 100%; border: none; background:#fff; }
+    #topnote {
+      position: fixed; top: 10px; right: 10px; z-index: 1000; display:none;
+      background: rgba(15,23,42,.82); color:#fff; padding:8px 10px; border-radius:8px; font-size:12px;
     }
+    #topnote a{ color:#93c5fd; }
   </style>
 </head>
 <body>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       JET ENGINE LOADING SPINNER
-       Front-view turbofan: 8 swept fan blades, exact 45° spacing,
-       hub + spinner nose cone.  All geometry anchored at (50,50).
-       The SVG element itself rotates — circles look identical when
-       spun, so only the blades produce the spinning-engine effect.
-       ═══════════════════════════════════════════════════════════ -->
   <div id="loader">
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- Hub gradient for depth -->
         <radialGradient id="hg" cx="38%" cy="32%" r="65%">
-          <stop offset="0%"   stop-color="#2563eb"/>
+          <stop offset="0%" stop-color="#2563eb"/>
           <stop offset="100%" stop-color="#0a1628"/>
         </radialGradient>
-
-        <!--
-          MASTER FAN BLADE  (origin = engine centre = 0,0 after translate)
-          Pointing at 12-o-clock.  Geometry:
-            tip  (outer, r=36): x ∈ [-1.5, 1.5]  → 3 px chord
-            root (inner, r=12): x ∈ [-3.2, 3.8]  → 7 px chord
-          Leading edge (right side) sweeps back as radius increases,
-          giving the characteristic turbofan swept-blade profile.
-        -->
-        <path id="fb"
-          d="M  1.5,-36
-             C  3.8,-28   4.4,-20   3.8,-12
-             L -3.2,-12
-             C -2.8,-20  -2.4,-28  -1.5,-36
-             Z"/>
+        <path id="fb" d="M  1.5,-36 C  3.8,-28   4.4,-20   3.8,-12 L -3.2,-12 C -2.8,-20  -2.4,-28  -1.5,-36 Z"/>
       </defs>
-
-      <!-- ── STATIC OUTER COWL RINGS ─────────────────────────── -->
-      <!-- Outer nacelle lip -->
       <circle cx="50" cy="50" r="47" stroke="#1e3a5f" stroke-width="2.5"/>
-      <!-- Inner bypass duct ring -->
       <circle cx="50" cy="50" r="42" stroke="#162d52" stroke-width="0.8"/>
-
-      <!-- ── SPINNING FAN ASSEMBLY ───────────────────────────── -->
-      <!--
-        translate(50,50) moves the coordinate origin to the engine centre.
-        The CSS spin on #loader svg rotates the whole SVG around 50%/50%,
-        which is exactly (50,50) in viewBox units — so rotation is correct.
-        Alternating fill shades give each blade pair visual definition.
-      -->
       <g transform="translate(50,50)">
-
-        <!-- 8 blades at exact 45° intervals -->
-        <use href="#fb" transform="rotate(  0)" fill="#2563eb"/>
-        <use href="#fb" transform="rotate( 45)" fill="#1a4fc4"/>
-        <use href="#fb" transform="rotate( 90)" fill="#2563eb"/>
+        <use href="#fb" transform="rotate(0)" fill="#2563eb"/>
+        <use href="#fb" transform="rotate(45)" fill="#1a4fc4"/>
+        <use href="#fb" transform="rotate(90)" fill="#2563eb"/>
         <use href="#fb" transform="rotate(135)" fill="#1a4fc4"/>
         <use href="#fb" transform="rotate(180)" fill="#2563eb"/>
         <use href="#fb" transform="rotate(225)" fill="#1a4fc4"/>
         <use href="#fb" transform="rotate(270)" fill="#2563eb"/>
         <use href="#fb" transform="rotate(315)" fill="#1a4fc4"/>
-
-        <!-- Blade-tip containment ring -->
         <circle cx="0" cy="0" r="36" stroke="#1e3a5f" stroke-width="0.8"/>
-
-        <!-- Centre hub disk -->
         <circle cx="0" cy="0" r="11" fill="url(#hg)" stroke="#3b82f6" stroke-width="1.4"/>
-
-        <!-- Spinner nose cone -->
         <circle cx="0" cy="0" r="4.5" fill="#60a5fa"/>
-
-        <!-- Highlight glint -->
         <circle cx="-1.4" cy="-1.4" r="1.6" fill="#bfdbfe" opacity="0.5"/>
       </g>
     </svg>
     <p><strong>Q3 Consultancy</strong> — Loading Aviation Portal…</p>
+    <div class="actions">
+      <a id="openDirect" href="https://q3consultancy.github.io/Aviation-Opportunities-Portal/" target="_blank" rel="noopener">Open portal directly</a>
+      <a id="openAdmin" class="secondary" href="https://q3consultancy.github.io/Aviation-Opportunities-Portal/#admin" target="_blank" rel="noopener">Open admin directly</a>
+    </div>
   </div>
-
-  <!-- Full-screen standalone iframe -->
-  <iframe
-    id="portal"
-    src="https://q3consultancy.github.io/Aviation-Opportunities-Portal/"
-    title="Q3 Aviation Opportunities Portal"
-    allowfullscreen
-    allow="fullscreen"
-    loading="eager"
-  ></iframe>
-
+  <div id="topnote">If this wrapper is slow, use <a id="topDirect" href="https://q3consultancy.github.io/Aviation-Opportunities-Portal/" target="_blank" rel="noopener">direct portal</a>.</div>
+  <iframe id="portal" title="Q3 Aviation Opportunities Portal" allowfullscreen allow="fullscreen" loading="eager"></iframe>
   <script>
+    const base = 'https://q3consultancy.github.io/Aviation-Opportunities-Portal/';
+    const hash = window.location.hash || '';
+    const directUrl = base + hash;
+    document.getElementById('portal').src = directUrl;
+    document.getElementById('openDirect').href = directUrl;
+    document.getElementById('openAdmin').href = base + '#admin';
+    document.getElementById('topDirect').href = directUrl;
     const iframe = document.getElementById('portal');
     const loader = document.getElementById('loader');
-
-    // Hide loader once iframe content loads
-    iframe.addEventListener('load', function() {
-      setTimeout(function() { loader.classList.add('hide'); }, 300);
+    const topnote = document.getElementById('topnote');
+    function hideLoader(){ loader.classList.add('hide'); setTimeout(()=>{ loader.style.display='none'; topnote.style.display='block'; }, 350); }
+    iframe.addEventListener('load', function(){ setTimeout(hideLoader, 500); });
+    setTimeout(hideLoader, 3500);
+    window.addEventListener('hashchange', function(){
+      const next = base + (window.location.hash || '');
+      iframe.src = next;
+      document.getElementById('openDirect').href = next;
+      document.getElementById('topDirect').href = next;
     });
-
-    // Fallback: hide loader after 8 seconds regardless
-    setTimeout(function() { loader.classList.add('hide'); }, 8000);
   </script>
-
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
