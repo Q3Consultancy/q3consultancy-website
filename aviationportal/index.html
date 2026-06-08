@@ -16,15 +16,7 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     #loader p { color: #cbd5e1; font-size: 15px; letter-spacing: .4px; text-align:center; }
     #loader strong { color: #fff; }
-    #loader .actions { margin-top: 18px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
-    #loader a { color:#fff; text-decoration:none; background:#1d4ed8; padding:10px 14px; border-radius:8px; font-size:14px; }
-    #loader a.secondary { background:#334155; }
     #portal { position: fixed; inset: 0; width: 100%; height: 100%; border: none; background:#fff; }
-    #topnote {
-      position: fixed; top: 10px; right: 10px; z-index: 1000; display:none;
-      background: rgba(15,23,42,.82); color:#fff; padding:8px 10px; border-radius:8px; font-size:12px;
-    }
-    #topnote a{ color:#93c5fd; }
   </style>
 </head>
 <body>
@@ -55,33 +47,18 @@
       </g>
     </svg>
     <p><strong>Q3 Consultancy</strong> — Loading Aviation Portal…</p>
-    <div class="actions">
-      <a id="openDirect" href="https://q3consultancy.github.io/Aviation-Opportunities-Portal/" target="_blank" rel="noopener">Open portal directly</a>
-      <a id="openAdmin" class="secondary" href="https://q3consultancy.github.io/Aviation-Opportunities-Portal/#admin" target="_blank" rel="noopener">Open admin directly</a>
-    </div>
   </div>
-  <div id="topnote">If this wrapper is slow, use <a id="topDirect" href="https://q3consultancy.github.io/Aviation-Opportunities-Portal/" target="_blank" rel="noopener">direct portal</a>.</div>
   <iframe id="portal" title="Q3 Aviation Opportunities Portal" allowfullscreen allow="fullscreen" loading="eager"></iframe>
   <script>
     const base = 'https://q3consultancy.github.io/Aviation-Opportunities-Portal/';
-    const hash = window.location.hash || '';
-    const directUrl = base + hash;
-    document.getElementById('portal').src = directUrl;
-    document.getElementById('openDirect').href = directUrl;
-    document.getElementById('openAdmin').href = base + '#admin';
-    document.getElementById('topDirect').href = directUrl;
     const iframe = document.getElementById('portal');
     const loader = document.getElementById('loader');
-    const topnote = document.getElementById('topnote');
-    function hideLoader(){ loader.classList.add('hide'); setTimeout(()=>{ loader.style.display='none'; topnote.style.display='block'; }, 350); }
+    function buildTarget(){ return base + (window.location.hash || ''); }
+    function hideLoader(){ loader.classList.add('hide'); setTimeout(()=>{ loader.style.display='none'; }, 350); }
+    iframe.src = buildTarget();
     iframe.addEventListener('load', function(){ setTimeout(hideLoader, 500); });
     setTimeout(hideLoader, 3500);
-    window.addEventListener('hashchange', function(){
-      const next = base + (window.location.hash || '');
-      iframe.src = next;
-      document.getElementById('openDirect').href = next;
-      document.getElementById('topDirect').href = next;
-    });
+    window.addEventListener('hashchange', function(){ iframe.src = buildTarget(); });
   </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
