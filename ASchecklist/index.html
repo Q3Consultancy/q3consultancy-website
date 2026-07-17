@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Q3 Onboarding Checklist · Aviationscouts</title>
+  <title>Q3 Onboarding Checklist · Aerotec Group</title>
   <style>
     :root {
       --bg: #081422;
@@ -667,6 +667,44 @@
     }
 
     .file-input { display: none; }
+
+
+    .btn-icon-inline,
+    .file-label .icon-inline,
+    .upload-meta .icon-inline {
+      display: inline-flex;
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+    }
+
+    .btn-icon-inline svg,
+    .file-label .icon-inline svg,
+    .upload-meta .icon-inline svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .btn-icon-label,
+    .drive-link-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar-actions .btn,
+    .sidebar-actions a.btn {
+      text-decoration: none;
+    }
+
+    .file-label.drive-folder-link {
+      text-decoration: none;
+      gap: 8px;
+    }
 
     .file-chip-wrap {
       display: flex;
@@ -1748,6 +1786,108 @@
         font-size: 11px !important;
         line-height: 1.35 !important;
       }
+
+      .item-head {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+        flex-wrap: nowrap !important;
+      }
+
+      .item-title-wrap {
+        width: 100% !important;
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+      }
+
+      .item-title {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        word-break: break-word;
+      }
+
+      .status-group {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 6px !important;
+      }
+
+      .status-option,
+      .status-select,
+      .details-toggle {
+        max-width: 100%;
+      }
+
+      .owner-inline-note {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .status-group {
+        gap: 6px !important;
+      }
+
+      .details-toggle {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+
+    .auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 15, 26, .72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    .auth-overlay.open { display: flex; }
+
+    .auth-card {
+      width: min(100%, 420px);
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 24px 50px rgba(0,0,0,.24);
+      padding: 22px;
+      border: 1px solid rgba(16,32,51,.08);
+    }
+
+    .auth-card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: var(--text);
+    }
+
+    .auth-card p {
+      margin: 0 0 14px;
+      color: var(--text-soft);
+      line-height: 1.55;
+    }
+
+    .auth-card .field { margin-top: 10px; }
+
+    .auth-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .auth-error {
+      margin-top: 10px;
+      color: var(--danger);
+      font-size: 13px;
+      min-height: 18px;
     }
 
   </style>
@@ -1764,10 +1904,10 @@
               <span class="brand-title-inline">Onboarding Checklist</span>
             </div>
           </div>
-          <h1>Aviationscouts checklist for Africa market engagement</h1>
+          <h1>Aerotec Group checklist for Africa market engagement</h1>
           <p>
             Please use this live checklist to capture the commercial, technical, competitive, and compliance information
-            Q3 Consultancy needs from Aviationscouts to support its Africa-focused engagement. Mark items as
+            Q3 Consultancy needs from Aerotec Group to support its Africa-focused engagement. Mark items as
             Provided when answered and open Details tab to add context, shared links, and supporting file references.
           </p>
         </div>
@@ -1860,9 +2000,9 @@
 
         <div class="sidebar-actions">
           <button class="btn btn-primary" type="button" id="saveBtn">Save progress</button>
-          <button class="btn btn-secondary" type="button" id="exportBtn">Export JSON</button>
-          <button class="btn btn-secondary" type="button" id="exportPdfBtn">Export PDF</button>
-          <button class="btn btn-secondary" type="button" id="exportExcelBtn">Export Excel</button>
+          <a class="btn btn-secondary" href="https://drive.google.com/drive/folders/1uNEouLVazjUpGHxfl3M5wokwb_B2co1R?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="btn-icon-label"><span class="btn-icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0F9D58" d="M7.71 3h8.58l3.28 5.68-4.29 7.42H6.72L2.43 8.68 7.71 3Z" opacity=".14"/><path fill="#0F9D58" d="M9.3 3h6.22l2.36 4.08h-3.7L9.3 3Z"/><path fill="#4285F4" d="M7.71 3 2.43 8.68h4.71l2.16-3.73L7.71 3Z"/><path fill="#FBBC04" d="M6.79 16.1h8.49l-2.38 4.12H9.17L6.79 16.1Z"/><path fill="#0F9D58" d="M15.52 3h.01l6.04 10.46-2.36 4.08-5.03-8.7h3.7L15.52 3Z"/></svg></span><span>Supporting documents folder</span></span></a>
+          <button class="btn btn-secondary" type="button" id="exportPdfBtn"><span class="btn-icon-label"><span class="btn-icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#E24A3B" d="M6 2h8l4 4v16H6z"/><path fill="#fff" d="M14 2v4h4" opacity=".75"/><path fill="#fff" d="M8.2 15.8v-5.6h2.25c1.3 0 2.1.72 2.1 1.86 0 1.16-.82 1.9-2.13 1.9H9.5v1.84H8.2Zm1.3-2.9h.74c.63 0 1-.3 1-.82 0-.5-.37-.8-1-.8H9.5v1.62Zm4.02 2.9v-5.6h1.9c1.77 0 2.83 1.05 2.83 2.8 0 1.74-1.08 2.8-2.84 2.8h-1.9Zm1.3-1.1h.45c1.02 0 1.66-.6 1.66-1.7 0-1.1-.64-1.7-1.66-1.7h-.45v3.4Z"/></svg></span><span>Export to PDF</span></span></button>
+          <button class="btn btn-secondary" type="button" id="exportExcelBtn"><span class="btn-icon-label"><span class="btn-icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#1D6F42" d="M5 3h9l5 3.5V21H5z"/><path fill="#fff" d="M14 3v3.5h5" opacity=".75"/><path fill="#107C41" d="M3 6.5h8.5v11H3z"/><path fill="#fff" d="m5.3 9.1 1.54 2.39L8.39 9.1h1.4l-2.2 3.19 2.26 3.3H8.42l-1.6-2.46-1.6 2.46H3.8l2.27-3.3L3.87 9.1h1.43Z"/></svg></span><span>Export to MS Excel</span></span></button>
           <button class="btn btn-secondary" type="button" id="summaryBtn">View summary</button>
           <button class="btn btn-ghost" type="button" id="resetCurrentBtn">Reset active section</button>
           <button class="btn btn-ghost" type="button" id="resetAllBtn">Reset all sections</button>
@@ -1921,7 +2061,7 @@
             <div class="page-head">
               <div>
                 <h2 class="page-heading">2. Products & Solutions</h2>
-                <p class="page-subheading">Define the products and services Aviationscouts wants to prioritise for Africa, along with use cases and technical differentiation.</p>
+                <p class="page-subheading">Define the products and services Aerotec Group wants to prioritise for Africa, along with use cases and technical differentiation.</p>
               </div>
               <div class="page-counter theme-s2">Section 2 of 8</div>
             </div>
@@ -1931,7 +2071,7 @@
             <div class="page-head">
               <div>
                 <h2 class="page-heading">3. Competition & Positioning</h2>
-                <p class="page-subheading">Map the main competitors and clarify how Aviationscouts is differentiated technically and commercially.</p>
+                <p class="page-subheading">Map the main competitors and clarify how Aerotec Group is differentiated technically and commercially.</p>
               </div>
               <div class="page-counter theme-s3">Section 3 of 8</div>
             </div>
@@ -2011,6 +2151,22 @@
     </div>
   </div>
 
+
+  <div class="auth-overlay" id="authOverlay" aria-hidden="true">
+    <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <h3 id="authTitle">Protected checklist</h3>
+      <p>Enter the access password to open and update the Aerotec Group onboarding checklist. Saved entries and uploaded files are stored in the configured repository, not just in the browser.</p>
+      <div class="field wide">
+        <label for="authPassword">Password</label>
+        <input id="authPassword" type="password" placeholder="Enter password">
+      </div>
+      <div class="auth-actions">
+        <button class="btn btn-primary" type="button" id="authLoginBtn">Open checklist</button>
+      </div>
+      <div class="auth-error" id="authError"></div>
+    </div>
+  </div>
+
   <div class="toast" id="toast"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
@@ -2018,7 +2174,7 @@
   <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
   <script>
-    const STORAGE_KEY = 'q3_client_onboarding_checklist_aviationscouts_v1';
+    const STORAGE_KEY = 'q3_client_onboarding_checklist_aerotec-group_v1';
 
     const sections = {
       market_presence: {
@@ -2033,7 +2189,7 @@
       products_solutions: {
         label: '2. Products',
         title: '2. Products & Solutions',
-        subtext: 'Define the products and services Aviationscouts wants to prioritise for Africa, along with use cases and technical differentiation.',
+        subtext: 'Define the products and services Aerotec Group wants to prioritise for Africa, along with use cases and technical differentiation.',
         items: [
           { key: 'products_focus', title: 'Products and services to focus on for Africa', hint: 'Please list the products and services you would like to focus on for Africa.', placeholder: 'Priority products, services, and target segments' },
           { key: 'products_use_case', title: 'Main use case and key differentiators for each product or service', hint: 'Please explain the main use case and key differentiators for each priority product or service.', placeholder: 'Use case, customer problem solved, and differentiators' },
@@ -2044,7 +2200,7 @@
       competition_positioning: {
         label: '3. Competition',
         title: '3. Competition & Positioning',
-        subtext: 'Map the main competitors and clarify how Aviationscouts is differentiated technically and commercially.',
+        subtext: 'Map the main competitors and clarify how Aerotec Group is differentiated technically and commercially.',
         items: [
           { key: 'competition_main', title: 'Main competitors for each target product area', hint: 'Please identify the main competitors for each target product area.', placeholder: 'Competitors by product line or service area' },
           { key: 'competition_diff', title: 'Key technical and commercial differences versus competitors', hint: 'Please outline the key technical and commercial differences versus those competitors.', placeholder: 'Capability, pricing, delivery, or support differences' },
@@ -2144,13 +2300,17 @@
       saveMessage: document.getElementById('saveMessage'),
       summaryModal: document.getElementById('summaryModal'),
       summaryOutput: document.getElementById('summaryOutput'),
-      toast: document.getElementById('toast')
+      toast: document.getElementById('toast'),
+      authOverlay: document.getElementById('authOverlay'),
+      authPassword: document.getElementById('authPassword'),
+      authError: document.getElementById('authError')
     };
 
     renderAllSections();
     bindGlobalActions();
     setActiveSection(state.activeSection || 'market_presence');
     updateDashboard();
+    initializeRemotePersistence();
 
     function loadState() {
       const sectionKeys = Object.keys(sections);
@@ -2175,7 +2335,8 @@
 
     function saveState(silent = true) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      if (!silent) showMessage('Progress saved in your browser for this device and browser.');
+      if (remoteState.authenticated) queueRemoteSave(silent);
+      if (!silent) showMessage(remoteState.authenticated ? 'Progress is being saved to the repository.' : 'Progress saved in your browser for this device and browser. Log in to save to the repository.');
     }
 
     function normalizeStatus(value) {
@@ -2243,12 +2404,11 @@
               <label>File references</label>
               <div class="upload-box">
                 <div class="upload-title"><span class="upload-icon">📎</span><span>Supporting file(s)</span></div>
-                <div class="upload-meta">Selected file names are shown for reference only in this standalone page.</div>
+                <div class="upload-meta"><span class="drive-link-inline"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0F9D58" d="M9.3 3h6.22l2.36 4.08h-3.7L9.3 3Z"/><path fill="#4285F4" d="M7.71 3 2.43 8.68h4.71l2.16-3.73L7.71 3Z"/><path fill="#FBBC04" d="M6.79 16.1h8.49l-2.38 4.12H9.17L6.79 16.1Z"/><path fill="#0F9D58" d="M15.52 3h.01l6.04 10.46-2.36 4.08-5.03-8.7h3.7L15.52 3Z"/></svg></span><span>Supporting documents should be uploaded to the shared Google Drive folder.</span></span></div>
                 <div class="upload-actions">
-                  <label class="file-label" for="${sectionKey}-${item.key}-files">Choose file(s)</label>
-                  <input class="file-input" id="${sectionKey}-${item.key}-files" type="file" multiple data-field="files" data-section="${sectionKey}" data-key="${item.key}">
+                  <a class="file-label drive-folder-link" href="https://drive.google.com/drive/folders/1uNEouLVazjUpGHxfl3M5wokwb_B2co1R?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="icon-inline" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0F9D58" d="M9.3 3h6.22l2.36 4.08h-3.7L9.3 3Z"/><path fill="#4285F4" d="M7.71 3 2.43 8.68h4.71l2.16-3.73L7.71 3Z"/><path fill="#FBBC04" d="M6.79 16.1h8.49l-2.38 4.12H9.17L6.79 16.1Z"/><path fill="#0F9D58" d="M15.52 3h.01l6.04 10.46-2.36 4.08-5.03-8.7h3.7L15.52 3Z"/></svg></span><span>Open shared Google Drive folder</span></a>
                 </div>
-                <div class="file-chip-wrap" id="${sectionKey}-${item.key}-files-list"></div>
+                <div class="file-chip-wrap" id="${sectionKey}-${item.key}-files-list"><span class="upload-meta">Drive folder linked for all supporting files.</span></div>
               </div>
             </div>
           </div>
@@ -2367,10 +2527,12 @@
       }
 
       if (field === 'files' && target instanceof HTMLInputElement) {
-        const files = Array.from(target.files || []).map(file => file.name);
-        state.sections[sectionKey][itemKey].files = files;
-        renderFileChips(sectionKey, itemKey, files);
+        const files = Array.from(target.files || []);
+        const names = files.map(file => file.name);
+        state.sections[sectionKey][itemKey].files = names;
+        renderFileChips(sectionKey, itemKey, names);
         saveState();
+        if (files.length) uploadSelectedFiles(sectionKey, itemKey, files);
       }
     }
 
@@ -2429,8 +2591,14 @@
     function renderFileChips(sectionKey, itemKey, files) {
       const wrap = document.getElementById(`${sectionKey}-${itemKey}-files-list`);
       if (!wrap) return;
+      const uploaded = state.sections[sectionKey]?.[itemKey]?.uploadedFiles || [];
       wrap.innerHTML = files.length
-        ? files.map(file => `<span class="file-chip">📄 ${escapeHtml(file)}</span>`).join('')
+        ? files.map((file, index) => {
+            const remote = uploaded[index];
+            return remote?.download_url
+              ? `<a class="file-chip" href="${escapeAttr(remote.download_url)}" target="_blank" rel="noopener">📄 ${escapeHtml(file)}</a>`
+              : `<span class="file-chip">📄 ${escapeHtml(file)}</span>`;
+          }).join('')
         : '<span class="upload-meta">No files selected yet.</span>';
     }
 
@@ -2789,10 +2957,6 @@
       }
 
       document.getElementById('saveBtn').addEventListener('click', () => saveState(false));
-      document.getElementById('exportBtn').addEventListener('click', () => {
-        exportState();
-        showToast('JSON export downloaded.');
-      });
       document.getElementById('exportPdfBtn').addEventListener('click', exportPdfSummary);
       document.getElementById('exportExcelBtn').addEventListener('click', exportExcelSummary);
 
@@ -2815,7 +2979,7 @@
       });
 
       document.getElementById('resetAllBtn').addEventListener('click', () => {
-        if (!window.confirm('Reset all entries in both sections?')) return;
+        if (!window.confirm('Reset all entries in all sections?')) return;
         Object.keys(sections).forEach(resetSection);
         showMessage('All sections have been reset.');
       });
@@ -2825,6 +2989,177 @@
       window.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') closeSummaryModal();
       });
+    }
+
+
+    const REMOTE_API_BASE = '/.netlify/functions';
+    const remoteState = {
+      authenticated: false,
+      saving: false,
+      saveTimer: null,
+      initialized: false
+    };
+
+    async function initializeRemotePersistence() {
+      bindAuthActions();
+      const session = await fetchRemote('session', { method: 'GET' }, false);
+      if (!session.ok) {
+        openAuthOverlay();
+        return;
+      }
+
+      remoteState.authenticated = true;
+      closeAuthOverlay();
+      await loadRemoteState();
+      remoteState.initialized = true;
+    }
+
+    function bindAuthActions() {
+      const loginBtn = document.getElementById('authLoginBtn');
+      if (loginBtn) loginBtn.addEventListener('click', submitAuthLogin);
+      if (refs.authPassword) {
+        refs.authPassword.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') submitAuthLogin();
+        });
+      }
+    }
+
+    function openAuthOverlay(message = '') {
+      refs.authOverlay?.classList.add('open');
+      refs.authOverlay?.setAttribute('aria-hidden', 'false');
+      if (refs.authError) refs.authError.textContent = message;
+      if (refs.authPassword) {
+        refs.authPassword.value = '';
+        setTimeout(() => refs.authPassword?.focus(), 30);
+      }
+    }
+
+    function closeAuthOverlay() {
+      refs.authOverlay?.classList.remove('open');
+      refs.authOverlay?.setAttribute('aria-hidden', 'true');
+      if (refs.authError) refs.authError.textContent = '';
+    }
+
+    async function submitAuthLogin() {
+      const password = refs.authPassword?.value || '';
+      if (!password) {
+        if (refs.authError) refs.authError.textContent = 'Enter the checklist password.';
+        return;
+      }
+
+      const response = await fetchRemote('login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password })
+      }, false);
+
+      if (!response.ok) {
+        if (refs.authError) refs.authError.textContent = 'Password incorrect. Please try again.';
+        return;
+      }
+
+      remoteState.authenticated = true;
+      closeAuthOverlay();
+      await loadRemoteState();
+      showToast('Connected to the repository-backed checklist.');
+    }
+
+    async function fetchRemote(endpoint, options = {}, redirectOnAuthFail = true) {
+      const response = await fetch(`${REMOTE_API_BASE}/${endpoint}`, {
+        ...options,
+        credentials: 'include'
+      });
+
+      if (response.status === 401 && redirectOnAuthFail) {
+        remoteState.authenticated = false;
+        openAuthOverlay('Your session expired. Re-enter the password to continue.');
+      }
+
+      return response;
+    }
+
+    async function loadRemoteState() {
+      const response = await fetchRemote('load');
+      if (!response.ok) return;
+      const payload = await response.json();
+      if (!payload?.state) return;
+
+      const incoming = payload.state;
+      state.activeSection = Object.keys(sections).includes(incoming.activeSection) ? incoming.activeSection : state.activeSection;
+      state.expandedAll = Boolean(incoming.expandedAll);
+      Object.keys(sections).forEach(sectionKey => {
+        state.sections[sectionKey] = incoming.sections?.[sectionKey] || {};
+      });
+
+      renderAllSections();
+      setActiveSection(state.activeSection || 'market_presence');
+      updateDashboard();
+    }
+
+    function queueRemoteSave(silent = true) {
+      clearTimeout(remoteState.saveTimer);
+      remoteState.saveTimer = setTimeout(() => flushRemoteSave(silent), 500);
+    }
+
+    async function flushRemoteSave(silent = true) {
+      if (!remoteState.authenticated || remoteState.saving) return;
+      remoteState.saving = true;
+      try {
+        const response = await fetchRemote('save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ state })
+        });
+        if (!response.ok) return;
+        if (!silent) showToast('Checklist saved to the repository.');
+      } finally {
+        remoteState.saving = false;
+      }
+    }
+
+    function readFileAsBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const result = String(reader.result || '');
+          const base64 = result.includes(',') ? result.split(',')[1] : result;
+          resolve(base64);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function uploadSelectedFiles(sectionKey, itemKey, files) {
+      if (!remoteState.authenticated) return;
+      const uploaded = [];
+
+      for (const file of files) {
+        const base64 = await readFileAsBase64(file);
+        const response = await fetchRemote('upload', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            sectionKey,
+            itemKey,
+            filename: file.name,
+            contentType: file.type || 'application/octet-stream',
+            base64
+          })
+        });
+        if (!response.ok) continue;
+        const payload = await response.json();
+        if (payload?.file) uploaded.push(payload.file);
+      }
+
+      if (uploaded.length) {
+        ensureItemState(sectionKey, itemKey);
+        state.sections[sectionKey][itemKey].uploadedFiles = uploaded;
+        state.sections[sectionKey][itemKey].files = uploaded.map(item => item.filename);
+        renderFileChips(sectionKey, itemKey, state.sections[sectionKey][itemKey].files);
+        await flushRemoteSave(true);
+        showToast('File(s) uploaded to the repository.');
+      }
     }
 
     function resetSection(sectionKey) {
@@ -2922,6 +3257,7 @@
       return escapeHtml(value).replace(/`/g, '&#96;');
     }
   </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
